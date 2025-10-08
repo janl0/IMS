@@ -8,7 +8,7 @@
 <body class="bg-light">
 <div class="container">
     <div class="row justify-content-center mt-5">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h3 class="card-title text-center mb-4">Login</h3>
@@ -23,6 +23,9 @@
                         </div>
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                        <div class="d-grid mt-1">
+                            <button class="btn btn-outline-secondary">Create Account</button>
                         </div>
                     </form>
                     <div th:if="${param.error}" class="alert alert-danger mt-3" role="alert">

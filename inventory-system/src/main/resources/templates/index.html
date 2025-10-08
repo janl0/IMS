@@ -11,5 +11,10 @@
 <header class="bg-white container mx-auto">
     <h1 class="text-4xl font-bold p-8">Home Page</h1>
 </header>
+<a href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>
+
+<form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+    <input hidden type="submit" value="Sign Out"/>
+</form>
 </body>
 </html>

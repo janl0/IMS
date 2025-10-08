@@ -22,7 +22,7 @@ public class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/error", "/index", "/login", "/css/**", "/js/**").permitAll()
+                        .requestMatchers("/**", "/css/**", "/js/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
@@ -32,7 +32,7 @@ public class SecurityConfig {
                 )
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/logout.html?logout")
+                        .logoutSuccessUrl("/login.html?logout")
                         .permitAll()
                 )
                 .build();
@@ -42,7 +42,7 @@ public class SecurityConfig {
     UserDetailsService userDetailsService() {
         UserDetails user = User
                 .withUsername("admin")
-                .password("{noop}password")
+                .password("{noop}password#")
                 .build();
         return new InMemoryUserDetailsManager(user);
     }
