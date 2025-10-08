@@ -2,6 +2,9 @@ package com.janlindauer.inventory_system.entity;
 
 import jakarta.persistence.*;
 
+/**
+ * Base entity for products
+ */
 @Entity
 @Table(name = "products")
 public class Product 
